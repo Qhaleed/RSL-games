@@ -25,7 +25,7 @@ body {
     justify-content: center;
     width: 50%;
     height: 100vh;
-    background-color: hsl(227, 72%, 76%);
+    background-color: hsl(227, 30%, 18%);
     font-size: 50px;
     transition: 1s;
     gap: 20%;
