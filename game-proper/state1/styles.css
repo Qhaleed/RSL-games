@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    --primary-color: hsl(0, 0%, 10%);
+    --secondary-color: white;
+    background-color: var(--primary-color);
+    font-family: Cinzel;
+    transition: 1s;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row ;
+    background-color: red;
+}
+.section-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100vh;
+    background-color: hsl(227, 72%, 76%);
+    font-size: 50px;
+    transition: 1s;
+}
+.section-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100vh;
+    background-color: hsl(35, 96%, 29%);
+    text-align: center;
+    font-size: 50px;
+    font-weight: 300;
+    transition: 1s;
+}
+p {
+    transition: 1s;
+}
+
+/* Hover effects */
+
+.section-1 p:hover, .section-2 p:hover  {
+    color: blue;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.section-1:hover {
+    background-color: hsl(227, 72%, 66%);
+    transition: 1s;
+}
+
+.section-2:hover {
+    background-color: hsl(35, 96%, 19%);
+    transition: 1s;
+}
