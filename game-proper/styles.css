@@ -83,6 +83,7 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
     align-items: center;
+    color: black;
 }
 .password-input input  {
     margin-left: 34px;
