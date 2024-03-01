@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
+}
+body {
+    --primary-color: hsl(0, 0%, 10%);
+    --secondary-color: white;
+    background-color: var(--primary-color);
+}
+.nav a {
+    color: hsl(0, 0%, 60%);
+}
+.nav a:hover {
+    color: hsl(0, 0%, 80%);
+}
+.nav li{
+    color: white;
+}
+.nav {
+    display: flex;
+    flex-direction: row;
+   
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+    background-color: hsl(0, 0%, 9%);
+}
+.nav ul {
+    margin: 40px 80px;
+    display: flex;
+    gap: 20px;
+}
+/* End of Navbar */
+
+/* Start of Container */
+
+.container {
+    width: 80%;
+    background-color: rgba(255, 0, 0, 0);
+    /* background-color: red; */
+    margin: auto;
+    margin-top: 100px;
+    padding: 30px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+/* End of Container
+
+/* Start of Division-1 */
+
+/* Start of section 1 */
+.section-1 {
+    margin-bottom: 30px;
+}
+.world-title {
+    color: wheat;
+    font-weight: bolder ;
+    padding-bottom: 7px;
+}
+.world-author {
+    padding-bottom: 7px;
+}
+/* End of section-1 */
+
+/* Start of section-2 */
+.section-2 {
+    width: 50%;
+   
+}
+
+.world-header {
+    font-weight: bolder;
+    color: wheat;
+}
+.user-input, .password-input, .email-input {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+}
+.password-input input  {
+    margin-left: 34px;
+}
+.email-input input  {
+    margin-left: 19px;
+}
+
+
+
+input {
+    padding: 10px;
+    padding-right: 200px;
+    border-radius: 2px;
+    border: none;
+    background-color: rgba(240, 248, 255, 1.089);
+    text-align: left;
+}
+
+form span {
+    color: rgb(255, 255, 255);
+}
+form button {
+    padding: 10px 95px;
+    margin: auto;
+    border-radius: 3px;
+    border-style:dashed;
+    margin-left: 60%;
+    transition: 500ms;
+    
+    border-color: rgba(255, 255, 255, 1.137);
+    margin-top: 30px;
+    background-color: rgba(240, 248, 255, 0.089);
+}
+form button:hover {
+    cursor: pointer;
+    background-color: rgba(240, 248, 255, 0.189);
+    background-color:hsl(24, 100%, 30%);
+}
+
+.buttonContainer {
+    width: 100%;
+    height: auto;
+    background-color: red;
+
+}
+
+/* End of section-2 */
+
+/* End of Division-1 */
+
+/* Start of Divisio-2 */
+
+.image-container {
+   border-radius: 30px;
+   overflow: hidden;
+   background: url(assets/welcome.jpg);
+   width: 100%;
+   background-size: cover;
+   transition: 500ms;
+}
+.image-container img {
+    transition: 500ms;
+}
+.image-container img:hover {
+   transform: scale(1.07);
+   transition: 500ms;
+}

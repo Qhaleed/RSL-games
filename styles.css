@@ -1,0 +1,427 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 500ms ease;
+}
+:root {
+    --main-color:red;
+    --secondary-color: rgba(0, 0, 0, 0.952);
+    
+}
+body {
+    background: radial-gradient(circle, rgba(62,62,62,1) 0%, rgba(26,41,50,1) 20%, rgba(12,23,29,1) 52%);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;   
+    transition: 500ms;
+    font-family: 'cinzel';
+   
+}
+video {
+    opacity: 50%;
+}
+span {
+    color: white;
+}
+/*Style for navigation bar*/
+
+a {
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    color: red;
+}
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 35px;
+    position: fixed;
+    background-color: rgba(245, 245, 220, 0);
+    width: 100%;
+    z-index: 1;
+    font-size: 13px;
+    text-align: center;
+    
+}
+.navbar ul li img {
+    width: 100%;
+    height:20px;    
+}
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+    text-align: center;
+    margin-top: 10px;
+    
+}
+.navbar input {
+    padding: 5px 10px;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 1;
+    border-color: white;
+    background-color: rgba(127, 255, 212, 0);
+    color: white;
+}
+.navbar input:hover {
+    transform: scale(1.1);
+    
+}
+
+
+
+/*This is for the video*/
+.video-container {
+    width: 100%;
+    padding: 0;
+    height: 83vh;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.video-container video {
+    width: 95.263%;
+    height:80vh;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    transform: scale(1.1);
+
+}
+
+/*Section 2*/
+
+.second-section {
+    width: 100%;
+    height: auto;
+    padding: 20px 80px;
+    background: rgb(62,62,62);
+background: radial-gradient(circle, rgba(62,62,62,1) 0%, rgba(26,41,50,1) 20%, rgba(12,23,29,1) 52%);
+}
+.second-section-first {
+    overflow: hidden;
+    width: 6100px;
+}
+.second-section h1 {
+    padding-top: 10%;
+    margin-bottom: 50px;
+}
+.second-section-second {
+    margin-left: 20px;
+    gap: 20px;
+
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.image-container {
+    width: auto;
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    border-radius: 20px;
+    
+   
+}
+
+.frame {
+    width: 100%;
+    
+    overflow: hidden;
+    
+}
+.stageOfTheGame {
+    width: 100%;
+}
+
+.stageOfTheGame:hover {
+    width: 100%;
+    transform: scale(1.05);
+    transition: 500ms ease;
+    cursor: pointer;
+}
+.article {
+    display: flex;
+    
+}
+.info {
+    width:100%;
+    min-width: 570px;
+    min-height: 21.8%;
+    padding: 10px 50px;
+    background-color:var(--secondary-color);
+    text-align: center;
+    height: 1fr;
+    margin: 10px;
+    border-radius: 10px;  
+}
+.info:hover {
+    transform: scale(0.99);
+    cursor: pointer;
+    color: blue;
+}
+
+
+
+.third-section {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-top: 100px;
+   
+   
+   padding-bottom: 100px;
+}
+.third-section h1 {
+    padding-left: 55px;
+}
+/* Grid couresel */
+.article-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-right: 50px;
+    overflow: hidden;
+    margin-top: 30px;
+    width: 100%;
+    gap: 205px;
+    display: flex;
+
+}
+.article-container-second {
+   
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-right: 50px;
+    overflow: hidden;
+    margin-top: 30px;
+    width: 100%;
+    gap: 205px;
+    display: flex;
+  
+}
+.article-container-box {
+    width: 100px;
+    display: inline-block;
+    border-radius: 50px;
+    animation: flowGrid 50s linear infinite;
+   
+}
+.article-container-second-box {
+    width: 100px;
+    display: inline-block;
+    border-radius: 50px;
+    animation: flowGridTwo 50s linear infinite;
+  
+   
+}
+.article-container-box img {
+    width: 300px;
+}
+.article-container-second-box img {
+    width: 300px;
+}
+.article-container-box:hover {
+    transform: scale(1.01);
+
+}
+
+
+/* Key frames for animatiom */
+@keyframes flowGrid {
+    0% {
+        transform: translateX(50%);
+    }
+    25% {
+        transform: translateX(-700%);
+    }
+    50% {
+        transform: translateX(-1500%);
+    }
+    75% {
+        transform: translateX(-700%);
+    }
+    100% {
+        transform: translateX(50%);
+    }
+}
+@keyframes flowGridTwo {
+    0% {
+        transform: translateX(-1000%);
+    }
+    25% {
+        transform: translateX(-500%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    75% {
+        transform: translateX(-500%);
+    }
+    100% {
+        transform: translateX(-1000%);
+    }
+}
+/* This is for the fourth section */
+.fourth-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 100px;
+    padding: 0px 80px;
+    align-items: center;
+    height: 80vh;
+    line-height: 40px;
+    font-weight: 200;
+    font-family: cinzel;
+    font-size: 25px;
+    padding-bottom: 300px;
+}
+.fourth-section button {
+    padding: 20px 100px;
+    font-family: 'cinzel';
+    cursor: pointer;
+    transition: 500ms;
+    border-radius: 10px;
+    background-color: hsl(0, 0%, 15%);
+}
+.fourth-section button:hover {
+    transition: 500ms;
+    background-color: hsl(0, 0%, 20%);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*This is for the footer*/
+
+.footer {
+    width: 100%;
+    height: 10vh;
+    background:linear-gradient(135deg, black, hsla(240, 100%, 50%, 0.147), hsl(0, 0%, 14%));
+    padding: 20px 80px;
+    
+}
+
+.primary-foot {
+    width: 100%;
+    
+    display: flex;
+   flex-direction: column;
+    
+}
+
+
+.footer ul li a {
+    font-size: 13px;
+    color: grey;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer ul li a:hover {
+    color: white     ;
+}
+.footer ul li h3 {
+    font-size: 13px;
+}
+.footer ul {
+   
+    width: 37%;
+    vertical-align: middle;
+}
+
+/* This is for the main menu of the game */
+.main-menu {
+    
+    width: 100%;
+   display: none;
+   transition: 3000ms;
+   height: 100vh;
+   transition: 3s;
+}
+
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(0, 0%, 10%, 0.251);
+    gap: 20px;
+    transition: 3000ms;
+   
+}
+.menu-container h1 {
+    font-size: 18px;
+}
+.main-menu input {
+    padding: 20px 100px;
+    text-align: left;
+}
+.main-menu button {
+    padding: 20px 100px;
+}
+
+/*Loading Screen Div  */
+
+.loading-screen {
+    display: none;
+    width: 80%;
+    height: 10vh;
+    margin: auto ;
+    margin-top: 350px;
+    text-align: center;
+    transition: 500ms;
+    animation: blink 2s infinite ease-in-out;
+    background-color: rgba(22, 22, 22, 0);
+}
+
+@keyframes blink {
+    0% {
+        color: red;
+    
+    }
+    25% {
+        color: white;
+      
+    }
+    50% {
+        color: white;
+      
+    }
+    100% {
+        color: rgba(255, 0, 0, 0.521);
+      
+    }
+}
+
+
+
+.header {
+    margin: auto 150px;
+    margin-top: 30%px;
+    
+}
