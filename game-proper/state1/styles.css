@@ -51,12 +51,18 @@ p {
 
 /* Hover effects */
 
-.section-1 p:hover, .section-2 p:hover  {
+.section-1 p span:hover, .section-2 p span:hover  {
     color: blue;
     cursor: pointer;
     transition: 1s;
    
 }
+.section-1 p:hover, .section-2 p:hover  {
+
+ cursor: default;
+   
+   
+}   
 
 .description1, .description2 {
     opacity: 0;

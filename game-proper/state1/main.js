@@ -8,47 +8,47 @@ const description2 = document.getElementById('description2');
 section1.addEventListener("mouseover", function () {
     setTimeout(() => {
         description2.style.opacity = '0.01';
-    }, 100);
+    }, 200);
     setTimeout(() => {
         description2.style.opacity = '1';
         
      
-    }, 500);
+    }, 400);
     
 })
 
 section1.addEventListener("mouseout", function () {
     setTimeout(() => {
         description2.style.opacity = '1';
-    }, 500);
+    }, 200);
    
     setTimeout(() => {
         description2.style.opacity = '0.01';
      
-    }, 500);
+    }, 400);
 })
 
 // SECTION 2 HOVER
 section2.addEventListener("mouseover", function () {
     setTimeout(() => {
         description1.style.opacity = '0.01';
-    }, 100);
+    }, 200);
     setTimeout(() => {
         description1.style.opacity = '1';
         
      
-    }, 500);
+    }, 400);
     
 })
 
 section2.addEventListener("mouseout", function () {
     setTimeout(() => {
         description1.style.opacity = '1';
-    }, 500);
+    }, 200);
    
     setTimeout(() => {
         description1.style.opacity = '0.01';
      
-    }, 500);
+    }, 400);
 })
 
