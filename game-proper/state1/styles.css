@@ -84,3 +84,35 @@ p {
  
    
 }
+
+.proceed {
+    padding: 15px 80px;
+    border: none;
+    border-radius: 2px;
+    background-color: hsla(240, 60%, 100%);
+    transition: 1000ms;
+}
+.proceed:hover {
+    transition: 1000ms;
+    background-color: hsla(240, 60%, 80%, 0.568);
+    cursor: pointer;
+    color: black;
+}
+.proceed:active {
+    background-color: hsla(240, 60%, 80%, 1.568);
+}
+.blinkingAurora {
+    animation: ease-in-out 5s breath infinite;
+}
+
+@keyframes breath {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}

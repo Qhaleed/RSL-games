@@ -55,27 +55,75 @@ section2.addEventListener("mouseout", function () {
     }, 400);
 })
 
+//Void Funtions
+
+
 
 // Factions Choosing
 
 // THE AURORA FACTION
-aurora.addEventListener('click'  ,function(){
-    aurora.textContent='Faction Chosen...';
-    description1.textContent = 'Game is updating...';
-    setTimeout(() => {
-        description1.textContent = 'Game is updated... You will now be teleported to your homeworld';
-        container.style.backgroundColor = 'hsl(35, 96%, 29%)'
-    }, 2000);
-    setTimeout(() => {
-        section2.style.display = 'none';
-        section1.style.width = '100%';
-        section1.style.backgroundColor = 'hsl(227, 72%, 6%)';
-    }, 3000);
-    setTimeout(() => {
-        aurora.textContent = 'Welcome to the Auroran Stalwart faction';
-        description1.textContent = 'You are now member of the faction, from here on, you are to take a vow and swor fealty to the Auroran Queen';
-    }, 6000);
-})
+
+// THE HANDLER
+let clicked = false;
+function auroraHandler () {
+
+        if (!clicked) {
+        aurora.textContent='Faction Chosen...';
+        description1.textContent = 'Game is updating...';
+        setTimeout(() => {
+            description1.textContent = 'Game is updated... You will now be teleported to your homeworld';
+            container.style.backgroundColor = 'hsl(35, 96%, 29%)'
+            }, 2000);
+        setTimeout(() => {
+            section2.style.display = 'none';
+            section1.style.width = '100%';
+            section1.style.backgroundColor = 'hsl(227, 72%, 6%)';
+            }, 3000);
+        setTimeout(() => {
+                    aurora.style.color = 'blue';
+                    aurora.textContent = 'Welcome to the Auroran Stalwart faction';
+                    aurora.classList.add('blinkingAurora');
+                    description1.textContent = 'You are now member of the faction, from here on, you are to take a vow and swor fealty to the Auroran Queen';
+                   
+                    const proceedBtn = document.createElement('button');
+                    proceedBtn.setAttribute('id', 'proceed-btn');
+                    proceedBtn.textContent= "Proceed";
+                    proceedBtn.classList.add('proceed')
+                    section1.appendChild(proceedBtn);
+    
+    
+                    proceedBtn.addEventListener("click", function () {
+                    window.location.href = '../../index.html';
+                    return;
+                    
+                })
+                 
+                    
+           
+            
+            
+               
+        }, 6000);
+     
+        clicked = true;
+    
+    }   else {
+        alert("click only once dum dum");
+    }
+
+}
+
+
+
+// 
+aurora.addEventListener('click' , auroraHandler)
+
+
+
+
+
+
+
 
 // THE UMBRAL FACTION
 

@@ -8,9 +8,9 @@ const form = document.getElementById('loginForm');
 
 const accounts = [
     {
-        username: 'user1', 
-        type: 'pass1', 
-        identity: 'user1@example.com'
+        username: 'Captain Res', 
+        type: 'Melee', 
+        identity: 'Male'
     },
     {
         username: 'user2', 
