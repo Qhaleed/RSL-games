@@ -1,3 +1,4 @@
+const container = document.getElementById('container');
 const section1 = document.getElementById('section-1');
 const section2 = document.getElementById('section-2');
 const description1 = document.getElementById('description2');
@@ -63,11 +64,17 @@ aurora.addEventListener('click'  ,function(){
     description1.textContent = 'Game is updating...';
     setTimeout(() => {
         description1.textContent = 'Game is updated... You will now be teleported to your homeworld';
+        container.style.backgroundColor = 'hsl(35, 96%, 29%)'
     }, 2000);
     setTimeout(() => {
         section2.style.display = 'none';
         section1.style.width = '100%';
+        section1.style.backgroundColor = 'hsl(227, 72%, 6%)';
     }, 3000);
+    setTimeout(() => {
+        aurora.textContent = 'Welcome to the Auroran Stalwart faction';
+        description1.textContent = 'You are now member of the faction, from here on, you are to take a vow and swor fealty to the Auroran Queen';
+    }, 6000);
 })
 
 // THE UMBRAL FACTION
