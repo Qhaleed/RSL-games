@@ -20,6 +20,7 @@ body {
 }
 .section-1 {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 50%;
@@ -27,6 +28,8 @@ body {
     background-color: hsl(227, 72%, 76%);
     font-size: 50px;
     transition: 1s;
+    gap: 20%;
+    text-align: center;
 }
 .section-2 {
     display: flex;
@@ -38,7 +41,9 @@ body {
     text-align: center;
     font-size: 50px;
     font-weight: 300;
+    flex-direction: column;
     transition: 1s;
+    gap: 20%;
 }
 p {
     transition: 1s;
@@ -50,14 +55,26 @@ p {
     color: blue;
     cursor: pointer;
     transition: 1s;
+   
+}
+
+.description1, .description2 {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    font-size: 15px;
+    padding: 0px 50px;
 }
 
 .section-1:hover {
-    background-color: hsl(227, 72%, 66%);
+    background-color: hsl(227, 72%, 6%);
     transition: 1s;
+
+   
 }
 
 .section-2:hover {
-    background-color: hsl(35, 96%, 19%);
+    background-color: hsl(35, 96%, 6%);
     transition: 1s;
+ 
+   
 }
