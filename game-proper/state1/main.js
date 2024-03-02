@@ -93,7 +93,7 @@ function auroraHandler () {
     
     
                     proceedBtn.addEventListener("click", function () {
-                    window.location.href = '../../index.html';
+                    window.location.href = '../landing-page/index.html';
                     return;
                     
                 })
@@ -118,16 +118,35 @@ function auroraHandler () {
 // 
 aurora.addEventListener('click' , auroraHandler)
 
-
-
-
-
-
-
-
 // THE UMBRAL FACTION
-
+let notClicked = true;
 umbral.addEventListener('click', function () {
-    umbral.textContent = "Coming Soon!";
-    description2.textContent = "Apologies for the inconvience, still working on it";
+    
+
+    if (notClicked) {
+        container.style.backgroundColor = 'hsl(227, 72%, 6%)';
+        section1.style.opacity = '0';
+        aurora.style.opacity = '0';
+        description1.style.opacity = '0';
+        section1.style.width = '0%';
+        section2.style.width = '100%';
+        umbral.textContent = "Coming Soon!";
+        description2.textContent = "Apologies for the inconvience, still working on it";
+        notClicked = false;
+        return;
+    } else {
+        umbral.textContent = "Coming Soon!";
+        description2.textContent = "Apologies for the inconvience, still working on it";
+
+        section1.style.opacity = '1';
+        section1.style.width = '50%';
+        section2.style.width = '50%';
+
+        setTimeout(() => {
+            aurora.style.opacity = '1';
+            description1.style.opacity = '1'; 
+        }, 500);
+       
+    }
+    
 })

@@ -31,7 +31,7 @@ enterGameButton.addEventListener("click", function enterGame () {
         }, 2000);
         setTimeout(() => {
            
-           window.location.href ='game-proper/index.html';
+           window.location.href ='../state0/index.html';
         }, 5000);
     
     

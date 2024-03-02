@@ -34,7 +34,7 @@ function authentication () {
     if (account) {
         worldHeader.textContent = 'Game is updating...';
         setTimeout(() => {
-            window.location.href ='state1/index.html';
+            window.location.href ='../state1/index.html';
         }, 5000);
       
         
