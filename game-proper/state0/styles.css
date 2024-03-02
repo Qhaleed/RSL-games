@@ -81,6 +81,7 @@ body {
     font-weight: bolder;
     color: wheat;
 }
+
 .user-input, .password-input, .email-input {
     display: flex;
     justify-content: space-between;
@@ -94,17 +95,20 @@ body {
 .user-input input {
     background-color: black;
     color: white;
+    border-radius: 10px;
 }
 .password-input input  {
     margin-left: 34px;
     background-color: rgb(0, 0, 0);
     color: white;
+    border-radius: 10px;
     border-radius: 5px;
 }
 .email-input input  {
     margin-left: 19px;
     background-color: black;
     color: white;
+    border-radius: 10px;
 }
 
 

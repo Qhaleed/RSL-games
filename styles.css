@@ -76,15 +76,17 @@ ul {
 
 /*This is for the video*/
 .video-container {
-    width: 100%;
+    width: 50%;
+    overflow: hidden;
     padding: 0;
     height: 83vh;
     background-color: rgba(255, 0, 0, 0);
 }
 
 .video-container video {
-    width: 95.263%;
+    width: 95%;
     height:80vh;
+    overflow: hidden;
     padding: 0;
     position: absolute;
     top: 0;
@@ -297,7 +299,10 @@ h2 {
 
 }
 
-
+.enterGameButton {
+    border: none;
+    color: wheat;
+}
 
 
 
