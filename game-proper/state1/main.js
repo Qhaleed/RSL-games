@@ -93,7 +93,7 @@ function auroraHandler () {
     
     
                     proceedBtn.addEventListener("click", function () {
-                    window.location.href = '../landing-page/index.html';
+                    window.location.href = '../../index.html';
                     return;
                     
                 })
