@@ -30,6 +30,7 @@ body {
     transition: 1s;
     gap: 20%;
     text-align: center;
+    color: white;
 }
 .section-2 {
     display: flex;
@@ -44,9 +45,11 @@ body {
     flex-direction: column;
     transition: 1s;
     gap: 20%;
+    color: white;
 }
 p {
     transition: 1s;
+    color: white; 
 }
 
 /* Hover effects */
