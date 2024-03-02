@@ -48,6 +48,7 @@ body {
     overflow: hidden;
     display: flex;
     justify-content: space-between;
+    gap: 150px;
 }
 /* End of Container
 
