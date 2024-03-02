@@ -162,6 +162,7 @@ form button:hover {
 }
 .image-container img {
     transition: 500ms;
+    width: 100%;
 }
 .image-container img:hover {
    transform: scale(1.07);
