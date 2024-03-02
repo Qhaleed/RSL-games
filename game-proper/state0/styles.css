@@ -64,6 +64,10 @@ body {
 }
 .world-author {
     padding-bottom: 7px;
+     color: white;
+}
+.world-description {
+    color: white;
 }
 /* End of section-1 */
 
@@ -89,6 +93,7 @@ body {
 }
 .user-input input {
     background-color: black;
+    color: white;
 }
 .password-input input  {
     margin-left: 34px;
