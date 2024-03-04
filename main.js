@@ -1,12 +1,14 @@
 var navbar = document.getElementById('navbar');
 const enterGameButton = document.getElementById('enterGameButton');
-const land = document.getElementById('landing-page')
+const land = document.getElementById('landing-page');
 const mainMenu = document.getElementById('main-menu');
 const loadingScreen = document.getElementById('loading-screen');
 const loadingHeader = document.getElementById('header');
 const input = document.getElementById('input');
 const submitBtn = document.getElementById('submit-btn');
 const mainText = document.getElementById('main-text'); 
+const clickImg = document.getElementById('clickable-img');
+
 // The navbar functions
 window.onscroll = function() {scrollFunction()};
 function scrollFunction () {
@@ -19,10 +21,101 @@ function scrollFunction () {
     }
 }
 
+// Clickable-img
+// let clickImgCounter = 0;
+// let seconds = 0;
+
+// function imageChanger () {
+//     seconds++;
+//     if (seconds > 3) {
+//         clickImgCounter++;
+//         clickImg.src = "components/videos/img/thumbnails/wizard.jpg";
+        
+//     }
+//     else if (seconds > 6) {
+//         clickImg.src = "components/videos/img/thumbnails/download_image_1708688550253.png";
+//         clickImgCounter++;
+//     }
+//     else if (seconds > 9) {
+//         clickImg.src = "components/videos/img/thumbnails/horse.jpg";
+//         clickImgCounter++;
+    
+//     }
+//     else if (seconds > 12) {
+//         clickImgCounter = 0;
+//     }
+
+// }
+
+// let timer = setInterval(changeImage, 1000);
+
+    
+// if (clickImgCounter === 0) {
+//             clickImg.src = "components/videos/img/thumbnails/wizard.jpg";
+//             clickImgCounter++;
+//         }
+//         else if (clickImgCounter === 1) {
+//             clickImg.src = "components/videos/img/thumbnails/download_image_1708688550253.png";
+//             clickImgCounter++;
+//         }
+//         else if (clickImgCounter === 2) {
+//             clickImg.src = "components/videos/img/thumbnails/horse.jpg";
+//             clickImgCounter = 0;
+//         }
+let clickImgCounter = 0;
+
+clickImg.addEventListener('click', function () {
+
+    if (clickImgCounter === 0) {
+        clickImg.src = "components/videos/img/thumbnails/wizard.jpg";
+        clickImgCounter++;
+    }
+    else if (clickImgCounter === 1) {
+        clickImg.src = "components/videos/img/thumbnails/horse.jpg";
+       
+        clickImgCounter++;
+    }
+    else if (clickImgCounter === 2) {
+        clickImg.src = "components/videos/img/thumbnails/download_image_1708688550253.png";
+        clickImgCounter = 0;
+    }
+})
+
+let seconds = 0;
+
+function timer () {
+    seconds++;
+
+    if(seconds > 3 && seconds < 6) {
+        clickImg.src = "components/videos/img/thumbnails/wizard.jpg";
+        clickImgCounter = 0;
+    }
+    else if (seconds > 6 && seconds < 9) {
+        clickImg.src = "components/videos/img/thumbnails/horse.jpg";
+        clickImgCounter = 1;
+    }
+    else if (seconds > 9 && seconds < 12) {
+        clickImg.src = "components/videos/img/thumbnails/download_image_1708688550253.png";
+        clickImgCounter = 2;
+        seconds = 0;
+    }
+} 
+
+let interval = setInterval(timer, 1500);
+
+
+
+
+
+
+
+
+
+
 // Entergame funtion
 
 enterGameButton.addEventListener("click", function enterGame () {
-
+    enterGameButton.textContent = 'Loading...'
         setTimeout(() => {
             
             land.style.display = 'none';
@@ -38,16 +131,4 @@ enterGameButton.addEventListener("click", function enterGame () {
 });
 
 
-
-
-
-
-// Lets try to define game logic
-
-const game = {
-    start: function () {
-        output("Welcome to the game");
-    },
-    
-}
 
