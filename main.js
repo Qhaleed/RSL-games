@@ -9,6 +9,32 @@ const submitBtn = document.getElementById('submit-btn');
 const mainText = document.getElementById('main-text');
 const clickImg = document.getElementById('clickable-img');
 
+// Mobile menu elements
+const hamburger = document.getElementById('hamburger');
+const navbarMenu = document.getElementById('navbar-menu');
+
+// Hamburger menu toggle
+hamburger.addEventListener('click', function () {
+    hamburger.classList.toggle('active');
+    navbarMenu.classList.toggle('active');
+});
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.navbar-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navbarMenu.classList.remove('active');
+    });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function (e) {
+    if (!navbar.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navbarMenu.classList.remove('active');
+    }
+});
+
 // The navbar functions
 let lastScrollTop = 0;
 window.onscroll = function () { scrollFunction() };

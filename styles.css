@@ -40,7 +40,8 @@ a:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 30px 35px;
+  align-items: center;
+  padding: 20px 35px;
   position: fixed;
   background-color: rgba(245, 245, 220, 0);
   width: 100%;
@@ -54,17 +55,69 @@ a:hover {
 .navbar.hidden {
   transform: translateY(-100%);
 }
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+}
+
+.navbar-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-left: 20px;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-actions {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
 .navbar ul li img {
   width: 100%;
   height: 20px;
 }
-ul {
-  list-style-type: none;
-  display: flex;
-  gap: 30px;
-  text-align: center;
-  margin-top: 10px;
-}
+
 .navbar input {
   padding: 5px 10px;
   border-radius: 20px;
@@ -101,7 +154,8 @@ ul {
 
 .second-section {
   width: 100%;
-  height: 120%;
+  height: auto;
+  min-height: 100vh;
   padding: 20px 80px;
   background: rgb(62, 62, 62);
   background: radial-gradient(
@@ -113,7 +167,10 @@ ul {
 }
 .second-section-first {
   overflow: hidden;
-  width: 6100px;
+  width: 100%;
+  max-width: 600px;
+  flex: 0 0 auto;
+  min-width: 300px;
 }
 .second-section h1 {
   padding-top: 10%;
@@ -122,6 +179,8 @@ ul {
 .second-section-second {
   margin-left: 20px;
   gap: 20px;
+  flex: 1;
+  min-width: 300px;
 }
 
 h2 {
@@ -129,7 +188,7 @@ h2 {
   margin-bottom: 30px;
 }
 .image-container {
-  width: auto;
+  width: 100%;
   position: relative;
   overflow: hidden;
   height: auto;
@@ -138,11 +197,12 @@ h2 {
 
 .frame {
   width: 100%;
-
   overflow: hidden;
 }
 .stageOfTheGame {
   width: 100%;
+  height: auto;
+  display: block;
 }
 
 .stageOfTheGame:hover {
@@ -153,17 +213,20 @@ h2 {
 }
 .article {
   display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  align-items: flex-start;
 }
 .info {
   width: 100%;
-  min-width: 570px;
-  /* min-height: 21.8%; */
-  padding: 10px 50px;
+  min-width: 280px;
+  padding: 15px 30px;
   background-color: var(--secondary-color);
   text-align: center;
-  height: 1fr;
+  height: auto;
   margin: 10px;
   border-radius: 10px;
+  flex: 1;
 }
 .info:hover {
   transform: scale(0.99);
@@ -416,6 +479,254 @@ h2 {
 .header {
   margin: auto 150px;
   margin-top: 30%px;
+}
+
+/* Mobile Navbar Responsive Styles */
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+  .navbar {
+    padding: 15px 25px;
+  }
+
+  .navbar-nav {
+    gap: 20px;
+  }
+
+  .navbar-actions {
+    gap: 15px;
+  }
+
+  /* Second Section Tablet Styles */
+  .second-section {
+    padding: 20px 40px;
+    height: auto;
+  }
+
+  .second-section h1 {
+    padding-top: 8%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .article {
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .second-section-first {
+    width: 100%;
+    max-width: 400px;
+    min-width: 300px;
+  }
+
+  .second-section-second {
+    margin-left: 15px;
+    min-width: 300px;
+  }
+
+  .info {
+    min-width: 250px;
+    padding: 15px 30px;
+    margin: 8px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 50px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    gap: 40px;
+  }
+
+  .navbar-menu.active {
+    transform: translateX(0);
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .navbar-nav li a {
+    font-size: 18px;
+    padding: 10px 0;
+  }
+
+  .navbar-actions {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .navbar input {
+    width: 250px;
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+
+  /* Second Section Mobile Styles */
+  .second-section {
+    padding: 20px 20px;
+    height: auto;
+  }
+
+  .second-section h1 {
+    padding-top: 5%;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 28px;
+  }
+
+  .article {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .second-section-first {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+    order: 1;
+  }
+
+  .second-section-second {
+    margin-left: 0;
+    width: 100%;
+    order: 2;
+  }
+
+  .image-container {
+    width: 100%;
+  }
+
+  .stageOfTheGame {
+    width: 100%;
+    height: auto;
+  }
+
+  h2 {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .info {
+    min-width: 100%;
+    padding: 15px 20px;
+    margin: 8px 0;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+/* Small Mobile */
+@media screen and (max-width: 480px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .navbar-brand {
+    font-size: 14px;
+  }
+
+  .hamburger .bar {
+    width: 22px;
+    height: 2.5px;
+  }
+
+  .navbar-menu {
+    top: 60px;
+    height: calc(100vh - 60px);
+    padding-top: 30px;
+    gap: 30px;
+  }
+
+  .navbar-nav {
+    gap: 25px;
+  }
+
+  .navbar-nav li a {
+    font-size: 16px;
+  }
+
+  .navbar input {
+    width: 200px;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  /* Second Section Small Mobile Styles */
+  .second-section {
+    padding: 15px 15px;
+  }
+
+  .second-section h1 {
+    padding-top: 3%;
+    margin-bottom: 25px;
+    font-size: 24px;
+  }
+
+  .article {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .second-section-first {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 15px;
+    order: 1;
+  }
+
+  .second-section-second {
+    margin-left: 0;
+    width: 100%;
+    order: 2;
+  }
+
+  h2 {
+    margin-top: 12px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .info {
+    min-width: 100%;
+    padding: 12px 15px;
+    margin: 6px 0;
+    font-size: 13px;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .stageOfTheGame:hover {
+    transform: scale(1.005);
+  }
 }
 
 /* Media Queries for Responsive Footer */
