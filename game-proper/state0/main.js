@@ -1,52 +1,80 @@
-const usernameInput = document.getElementById("username");
-const typeInput = document.getElementById("password");
-const identityInput = document.getElementById("email");
-const submitButton = document.getElementById("submitbtn");
-const submitButtonNew = document.getElementById("submitbtnNew");
+// Get form elements
+const form = document.getElementById('freelanceForm');
+const submitButton = document.querySelector('.form-submit');
 const worldHeader = document.getElementById('world-header');
-const form = document.getElementById('loginForm');
 
-const accounts = [
-    {
-        username: 'Captain Res',
-        type: 'Melee',
-        identity: 'Male'
-    },
-    {
-        username: 'user2',
-        type: 'pass2',
-        identity: 'user2@example.com'
-    }
-];
-
-form.addEventListener('submit', function (event) {
+// Handle form submission
+form.addEventListener('submit', async function (event) {
     event.preventDefault();
-    authentication();
-});
-// For user credential authentication
-
-function authentication() {
-    const username = usernameInput.value.trim();
-    const type = typeInput.value.trim();
-    const identity = identityInput.value.trim();
-
-    const account = accounts.find(account => account.username == username && account.type == type);
-    if (account) {
-        worldHeader.textContent = 'Game is updating...';
-        setTimeout(() => {
-            window.location.href = '../state1/index.html';
-        }, 5000);
-
-
-    } else {
-        worldHeader.textContent = 'Invalid Login... User does not exist';
+    
+    // Get form data
+    const formData = new FormData(form);
+    const data = {
+        clientName: formData.get('clientName'),
+        projectType: formData.get('projectType'),
+        email: formData.get('email'),
+        description: formData.get('description')
+    };
+    
+    // Update UI to show loading
+    submitButton.disabled = true;
+    submitButton.innerHTML = '<span>Sending...</span>';
+    worldHeader.textContent = 'Sending your inquiry...';
+    
+    try {
+        // Send to Vercel Function
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok) {
+            // Success
+            worldHeader.textContent = 'Thank you! Your inquiry has been sent successfully.';
+            worldHeader.style.color = '#4CAF50';
+            form.reset();
+            
+            // Redirect after success (optional)
+            setTimeout(() => {
+                window.location.href = '../state1/index.html';
+            }, 3000);
+            
+        } else {
+            // Error from server
+            throw new Error(result.error || 'Failed to send email');
+        }
+        
+    } catch (error) {
+        console.error('Error:', error);
+        worldHeader.textContent = 'Sorry, there was an error sending your message. Please try again.';
+        worldHeader.style.color = '#f44336';
+    } finally {
+        // Reset button
+        submitButton.disabled = false;
+        submitButton.innerHTML = '<span>Submit Inquiry</span>';
     }
-    usernameInput = '';
-    typeInput = '';
-    identityInput = '';
-}
+});
 
-submitButton.addEventListener("click", authentication);
+// Form validation feedback
+const inputs = form.querySelectorAll('input, textarea');
+inputs.forEach(input => {
+    input.addEventListener('blur', function() {
+        if (this.value.trim() === '') {
+            this.style.borderColor = 'rgba(244, 67, 54, 0.5)';
+        } else {
+            this.style.borderColor = 'rgba(76, 175, 80, 0.5)';
+        }
+    });
+    
+    input.addEventListener('focus', function() {
+        this.style.borderColor = 'rgba(255, 255, 255, 0.5)';
+    });
+});
 
 // Account creation function
 // function createAccount () {
