@@ -11,7 +11,11 @@
     "build": "echo 'No build step needed for static site'",
     "start": "vercel dev"
   },
-  "keywords": ["portfolio", "games", "web-development"],
+  "keywords": [
+    "portfolio",
+    "games",
+    "web-development"
+  ],
   "author": "Qhal",
   "license": "MIT"
 }

@@ -1,54 +1,54 @@
 // Vercel Serverless Function for handling contact form
 export default async function handler(req, res) {
-  // Enable CORS
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  
-  // Handle preflight requests
-  if (req.method === 'OPTIONS') {
-    res.status(200).end();
-    return;
-  }
+    // Enable CORS
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-  // Only allow POST requests
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
-
-  try {
-    const { clientName, projectType, email, description } = req.body;
-
-    // Basic validation
-    if (!clientName || !email || !projectType || !description) {
-      return res.status(400).json({ error: 'All fields are required' });
+    // Handle preflight requests
+    if (req.method === 'OPTIONS') {
+        res.status(200).end();
+        return;
     }
 
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return res.status(400).json({ error: 'Invalid email format' });
+    // Only allow POST requests
+    if (req.method !== 'POST') {
+        return res.status(405).json({ error: 'Method not allowed' });
     }
 
-    // Import nodemailer (we'll install this)
-    const nodemailer = require('nodemailer');
+    try {
+        const { clientName, projectType, email, description } = req.body;
 
-    // Create transporter using Gmail (you can use other services)
-    const transporter = nodemailer.createTransporter({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER, // Your email
-        pass: process.env.EMAIL_PASS, // Your app password
-      },
-    });
+        // Basic validation
+        if (!clientName || !email || !projectType || !description) {
+            return res.status(400).json({ error: 'All fields are required' });
+        }
 
-    // Email content
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER, // Send to yourself
-      replyTo: email, // Client's email for easy reply
-      subject: `New Freelance Inquiry from ${clientName}`,
-      html: `
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            return res.status(400).json({ error: 'Invalid email format' });
+        }
+
+        // Import nodemailer (we'll install this)
+        const nodemailer = require('nodemailer');
+
+        // Create transporter using Gmail (you can use other services)
+        const transporter = nodemailer.createTransporter({
+            service: 'gmail',
+            auth: {
+                user: process.env.EMAIL_USER, // Your email
+                pass: process.env.EMAIL_PASS, // Your app password
+            },
+        });
+
+        // Email content
+        const mailOptions = {
+            from: process.env.EMAIL_USER,
+            to: process.env.EMAIL_USER, // Send to yourself
+            replyTo: email, // Client's email for easy reply
+            subject: `New Freelance Inquiry from ${clientName}`,
+            html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px;">
             New Freelance Project Inquiry
@@ -73,22 +73,22 @@ export default async function handler(req, res) {
           </div>
         </div>
       `,
-    };
+        };
 
-    // Send email
-    await transporter.sendMail(mailOptions);
+        // Send email
+        await transporter.sendMail(mailOptions);
 
-    // Success response
-    res.status(200).json({ 
-      success: true, 
-      message: 'Email sent successfully!' 
-    });
+        // Success response
+        res.status(200).json({
+            success: true,
+            message: 'Email sent successfully!'
+        });
 
-  } catch (error) {
-    console.error('Error sending email:', error);
-    res.status(500).json({ 
-      error: 'Failed to send email', 
-      details: error.message 
-    });
-  }
+    } catch (error) {
+        console.error('Error sending email:', error);
+        res.status(500).json({
+            error: 'Failed to send email',
+            details: error.message
+        });
+    }
 }

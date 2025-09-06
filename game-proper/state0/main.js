@@ -6,7 +6,7 @@ const worldHeader = document.getElementById('world-header');
 // Handle form submission
 form.addEventListener('submit', async function (event) {
     event.preventDefault();
-    
+
     // Get form data
     const formData = new FormData(form);
     const data = {
@@ -15,12 +15,12 @@ form.addEventListener('submit', async function (event) {
         email: formData.get('email'),
         description: formData.get('description')
     };
-    
+
     // Update UI to show loading
     submitButton.disabled = true;
     submitButton.innerHTML = '<span>Sending...</span>';
     worldHeader.textContent = 'Sending your inquiry...';
-    
+
     try {
         // Send to Vercel Function
         const response = await fetch('/api/contact', {
@@ -30,25 +30,25 @@ form.addEventListener('submit', async function (event) {
             },
             body: JSON.stringify(data)
         });
-        
+
         const result = await response.json();
-        
+
         if (response.ok) {
             // Success
             worldHeader.textContent = 'Thank you! Your inquiry has been sent successfully.';
             worldHeader.style.color = '#4CAF50';
             form.reset();
-            
+
             // Redirect after success (optional)
             setTimeout(() => {
                 window.location.href = '../state1/index.html';
             }, 3000);
-            
+
         } else {
             // Error from server
             throw new Error(result.error || 'Failed to send email');
         }
-        
+
     } catch (error) {
         console.error('Error:', error);
         worldHeader.textContent = 'Sorry, there was an error sending your message. Please try again.';
@@ -63,15 +63,15 @@ form.addEventListener('submit', async function (event) {
 // Form validation feedback
 const inputs = form.querySelectorAll('input, textarea');
 inputs.forEach(input => {
-    input.addEventListener('blur', function() {
+    input.addEventListener('blur', function () {
         if (this.value.trim() === '') {
             this.style.borderColor = 'rgba(244, 67, 54, 0.5)';
         } else {
             this.style.borderColor = 'rgba(76, 175, 80, 0.5)';
         }
     });
-    
-    input.addEventListener('focus', function() {
+
+    input.addEventListener('focus', function () {
         this.style.borderColor = 'rgba(255, 255, 255, 0.5)';
     });
 });
