@@ -237,6 +237,7 @@ h2 {
 .third-section {
   width: 100%;
   height: 120%;
+  min-height: 100%;
   overflow: hidden;
   padding-top: 100px;
 
@@ -332,15 +333,28 @@ h2 {
   flex-direction: column;
   width: 100%;
   gap: 100px;
-  height: 120%;
-  padding: 0px 80px;
+  height: auto;
+  min-height: 100vh;
+  padding: 60px 80px;
   align-items: center;
-  height: 100vh;
   line-height: 40px;
   font-weight: 200;
   font-family: cinzel;
   font-size: 25px;
-  padding-bottom: 300px;
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+.section-one {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-two {
+  font-size: 28px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 20px 0;
 }
 .fourth-section button {
   padding: 20px 100px;
@@ -394,7 +408,7 @@ h2 {
   margin-bottom: 20px;
   font-size: 24px;
   font-weight: bold;
-  font-family: 'Cinzel', serif;
+  font-family: "Cinzel", serif;
 }
 
 .footer-section h4 {
@@ -402,12 +416,12 @@ h2 {
   margin-bottom: 20px;
   font-size: 18px;
   font-weight: 600;
-  font-family: 'Cinzel', serif;
+  font-family: "Cinzel", serif;
   position: relative;
 }
 
 .footer-section h4::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -8px;
   left: 0;
@@ -473,7 +487,7 @@ h2 {
 }
 
 .footer-section ul li a::before {
-  content: '→';
+  content: "→";
   position: absolute;
   left: -20px;
   opacity: 0;
@@ -654,6 +668,22 @@ h2 {
     margin: 8px;
     font-size: 14px;
   }
+
+  /* Fourth Section Tablet Styles */
+  .fourth-section {
+    gap: 80px;
+    padding: 0px 40px;
+    height: auto;
+    min-height: 80vh;
+    font-size: 22px;
+    line-height: 35px;
+    padding-bottom: 200px;
+  }
+
+  .fourth-section button {
+    padding: 18px 80px;
+    font-size: 14px;
+  }
 }
 
 /* Mobile */
@@ -672,7 +702,7 @@ h2 {
     left: 0;
     width: 100%;
     height: calc(100vh - 70px);
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: #1a1a1a00;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -684,6 +714,7 @@ h2 {
 
   .navbar-menu.active {
     transform: translateX(0);
+    background-color: rgba(0, 0, 0, 0.95);
   }
 
   .navbar-nav {
@@ -762,6 +793,33 @@ h2 {
     margin: 8px 0;
     font-size: 14px;
     text-align: center;
+  }
+
+  /* Fourth Section Mobile Styles */
+  .fourth-section {
+    gap: 50px;
+    padding: 0px 20px;
+    height: auto;
+    min-height: 70vh;
+    font-size: 18px;
+    line-height: 30px;
+    padding-bottom: 150px;
+    text-align: center;
+  }
+
+  .section-one {
+    padding: 0 10px;
+  }
+
+  .section-two {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 20px 0;
+  }
+
+  .fourth-section button {
+    padding: 15px 60px;
+    font-size: 14px;
   }
 }
 
@@ -850,6 +908,35 @@ h2 {
   .stageOfTheGame:hover {
     transform: scale(1.005);
   }
+
+  /* Fourth Section Small Mobile Styles */
+  .fourth-section {
+    gap: 40px;
+    padding: 0px 15px;
+    height: auto;
+    min-height: 60vh;
+    font-size: 16px;
+    line-height: 26px;
+    padding-bottom: 120px;
+    text-align: center;
+  }
+
+  .section-one {
+    padding: 0 5px;
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .section-two {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 15px 0;
+  }
+
+  .fourth-section button {
+    padding: 12px 40px;
+    font-size: 13px;
+  }
 }
 
 /* Professional Footer Responsive Styles */
@@ -861,21 +948,21 @@ h2 {
     gap: 30px;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
-  
+
   .footer-section h3 {
     font-size: 22px;
   }
-  
+
   .footer-section h4 {
     font-size: 16px;
   }
-  
+
   .social-links a {
     width: 40px;
     height: 40px;
     font-size: 16px;
   }
-  
+
   .footer-bottom-content {
     padding: 20px 30px;
   }
@@ -889,31 +976,31 @@ h2 {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  
+
   .footer-section h3 {
     font-size: 20px;
   }
-  
+
   .footer-section h4 {
     font-size: 16px;
   }
-  
+
   .footer-section h4::after {
     left: 50%;
     transform: translateX(-50%);
   }
-  
+
   .social-links {
     justify-content: center;
   }
-  
+
   .footer-bottom-content {
     padding: 20px;
     flex-direction: column;
     text-align: center;
     gap: 15px;
   }
-  
+
   .footer-bottom-links {
     justify-content: center;
   }
@@ -925,48 +1012,48 @@ h2 {
     padding: 30px 15px 20px;
     gap: 20px;
   }
-  
+
   .footer-section h3 {
     font-size: 18px;
     margin-bottom: 15px;
   }
-  
+
   .footer-section h4 {
     font-size: 14px;
     margin-bottom: 15px;
   }
-  
+
   .footer-brand p {
     font-size: 13px;
     margin-bottom: 20px;
   }
-  
+
   .social-links a {
     width: 35px;
     height: 35px;
     font-size: 14px;
   }
-  
+
   .footer-section ul li a {
     font-size: 13px;
   }
-  
+
   .contact-info p {
     font-size: 13px;
   }
-  
+
   .footer-bottom-content {
     padding: 15px;
   }
-  
+
   .footer-bottom p {
     font-size: 12px;
   }
-  
+
   .footer-bottom-links a {
     font-size: 12px;
   }
-  
+
   .footer-bottom-links {
     gap: 15px;
     flex-wrap: wrap;
@@ -978,11 +1065,11 @@ h2 {
   .footer-content {
     padding: 25px 10px 15px;
   }
-  
+
   .footer-section h3 {
     font-size: 16px;
   }
-  
+
   .social-links a {
     width: 32px;
     height: 32px;
