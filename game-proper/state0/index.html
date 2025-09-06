@@ -1,60 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <title>Home World</title>
-</head>
-<body>
-    
-   <div class="nav">
-    
-    <ul>
-         <li>WrittenRealms</li>
-    </ul>
+  </head>
+  <body>
+    <div class="nav">
+      <ul>
+        <li><a href="../../index.html">Qhals'</a></li>
+      </ul>
 
-    <ul>
-        <li> <a href="">Worlds</a></li>
+      <ul>
+        <li><a href="">Worlds</a></li>
         <li><a href="">Docs</a></li>
         <li><a href="">Contacts</a></li>
-    </ul>
-   </div> 
-   <!-- End of navigation bar -->
-
-   <!-- Start of Division One -->
-    <div class="container">
-        <div class="division-1">
-            <div class="section-1">
-                <div class="world-title">THE CAVE</div>
-                <div class="world-author">By Res</div>
-                <div class="world-description">SINGLEPLAYER WORLD --Enter your character details for quick deployment</div>
-            </div>
-    
-            <div class="section-2">
-                <div class="world-header" id="world-header">YOUR CHARACTER</div>
-                <form id="loginForm">
-                    <div class="user-input"><p>Username:         </p><input type="text" name="username" id="username" placeholder="eg... Captain Res" required></div>
-                    <div class="password-input"><p>Type:</p> <input type="text" name="type" id="password" placeholder="Melee or Ranged" required></div>
-                    <div class="email-input"><p>Identity:</p> <input type="text" name="gen" id="email" placeholder="Male, Female, or Cyborg" required></div>
-                    <button class="user-submit" id="submitbtn"> <span>Login</span></button>
-               
-                </form>
-            </div>
-        </div> 
-        <!-- End of Division-1  -->
-        <!-- Start of Division-2 -->
-        <div class="division-2">
-            <div class="image-container">
-                <img src="../assets/welcome.jpg" alt="" aria-readonly="true">
-            </div>
-          
-        </div>
-       
+      </ul>
     </div>
-   
+    <!-- End of navigation bar -->
 
+    <!-- Start of Division One -->
+    <div class="container">
+      <div class="division-1">
+        <div class="section-1">
+          <div class="world-title">FREELANCE INQUIRY</div>
+          <div class="world-author">By Res</div>
+          <div class="world-description">
+            PROFESSIONAL SERVICES -- Submit your project details for a
+            consultation
+          </div>
+        </div>
+
+        <div class="section-2">
+          <div class="world-header" id="world-header">PROJECT DETAILS</div>
+          <form id="freelanceForm">
+            <div class="form-group">
+              <label>Your Name:</label>
+              <input
+                type="text"
+                name="clientName"
+                id="clientName"
+                placeholder="e.g., John Smith"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Project Type:</label>
+              <input
+                type="text"
+                name="projectType"
+                id="projectType"
+                placeholder="Web App, Mobile App, or System"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Email:</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="your.email@example.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Project Description:</label>
+              <textarea
+                name="description"
+                id="description"
+                placeholder="Brief description of your project requirements"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+            <button class="form-submit" type="submit">
+              <span>Submit Inquiry</span>
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- End of Division-1  -->
+      <!-- Start of Division-2 -->
+      <div class="division-2">
+        <div class="image-container">
+          <img src="../assets/welcome.jpg" alt="" aria-readonly="true" />
+        </div>
+      </div>
+    </div>
 
     <script src="main.js"></script>
-</body>
+  </body>
 </html>

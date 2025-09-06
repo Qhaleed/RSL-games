@@ -4,6 +4,11 @@
   box-sizing: border-box;
   transition: 500ms ease;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --main-color: red;
   --secondary-color: rgba(0, 0, 0, 0.952);
@@ -16,10 +21,10 @@ body {
     rgba(12, 23, 29, 1) 52%
   );
   color: white;
-  font-family: "Roboto", sans-serif;
+  font-family: "Cinzel", serif;
+  font-weight: 300;
   text-align: justify;
   transition: 500ms;
-  font-family: "cinzel";
 }
 video {
   opacity: 50%;
@@ -27,6 +32,46 @@ video {
 span {
   color: white;
 }
+
+/* Typography - Cinzel weights hierarchy */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+.navbar-brand {
+  font-family: "Cinzel", serif;
+  font-weight: 500;
+}
+
+/* Content should use lighter weights */
+.info {
+  font-weight: 400;
+}
+
+p,
+.section-one,
+.section-two {
+  font-weight: 300;
+}
+
+.navbar-brand {
+  font-family: "Cinzel", serif;
+}
+
 /*Style for navigation bar*/
 
 a {
@@ -227,11 +272,12 @@ h2 {
   margin: 10px;
   border-radius: 10px;
   flex: 1;
+  text-transform: lowercase;
+  font-variant: normal;
 }
 .info:hover {
   transform: scale(0.99);
   cursor: pointer;
-  color: blue;
 }
 
 .third-section {
@@ -339,7 +385,7 @@ h2 {
   align-items: center;
   line-height: 40px;
   font-weight: 200;
-  font-family: cinzel;
+  font-family: "Cinzel", serif;
   font-size: 25px;
   padding-bottom: 100px;
   text-align: center;
@@ -358,7 +404,7 @@ h2 {
 }
 .fourth-section button {
   padding: 20px 100px;
-  font-family: "cinzel";
+  font-family: "Cinzel", serif;
   cursor: pointer;
   transition: 500ms;
   border-radius: 10px;
@@ -379,6 +425,12 @@ h2 {
   );
   background-size: 200% 200%;
   transition: 500ms;
+  font-size: 13px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 30px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 .enterGameButton:hover {
   background-position: -100%;

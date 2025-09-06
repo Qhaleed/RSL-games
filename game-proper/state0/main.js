@@ -8,24 +8,24 @@ const form = document.getElementById('loginForm');
 
 const accounts = [
     {
-        username: 'Captain Res', 
-        type: 'Melee', 
+        username: 'Captain Res',
+        type: 'Melee',
         identity: 'Male'
     },
     {
-        username: 'user2', 
-        type: 'pass2', 
+        username: 'user2',
+        type: 'pass2',
         identity: 'user2@example.com'
     }
 ];
 
-form.addEventListener ('submit', function (event) {
+form.addEventListener('submit', function (event) {
     event.preventDefault();
     authentication();
 });
 // For user credential authentication
 
-function authentication () {
+function authentication() {
     const username = usernameInput.value.trim();
     const type = typeInput.value.trim();
     const identity = identityInput.value.trim();
@@ -34,17 +34,17 @@ function authentication () {
     if (account) {
         worldHeader.textContent = 'Game is updating...';
         setTimeout(() => {
-            window.location.href ='../state1/index.html';
+            window.location.href = '../state1/index.html';
         }, 5000);
-      
-        
+
+
     } else {
         worldHeader.textContent = 'Invalid Login... User does not exist';
     }
     usernameInput = '';
     typeInput = '';
     identityInput = '';
-}   
+}
 
 submitButton.addEventListener("click", authentication);
 
